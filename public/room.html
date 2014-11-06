@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Chatroom #: 12345</title>
+		<!-- bootstrap, will load dynamically with server -->
+		<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+		<style type="text/css">
+
+			.summary {
+				background-color: #eee;
+				padding: 5px;
+				margin-bottom: 5px;
+			}
+
+			#messages {
+				background-color: #eee;
+				list-style-type: none;
+				height: 600px;
+				margin: 0;
+				padding: 0;
+				overflow-y: scroll;
+			}
+
+			#messages li {
+				padding: 5px 10px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+						<span class="sr-only">Toggler navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">&ltCodeReview.com&gt</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav">
+						<li><a href="#" class="active">Sign In</a></li>
+						<li><a href="#">Register</a></li>
+						<li><a href="#">About</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div id="main">
+			<div class="container">
+
+				<h3>Hi, my Java program is not working!</h3>
+				
+				<div class="row">
+					<div class="col-md-9">
+						<div class="summary">
+							<p>I keep getting a syntax error on line 23. Sorry I very new to Java!</p>
+						</div>
+						
+						<form role="form" id="editor-form">
+							<!-- this will be the editor --> 
+							<textarea class="form-control editor" id="editor" rows="30"></textarea>
+							<button type="submit" class="btn btn-default">Submit Text</button>
+						</form>
+					</div>
+
+					<div class="col-md-3">
+						<div class="chatbox">
+							<ul id="messages">
+								<!-- this is where our messages will come from -->
+								<li>Welcome to room 12345. User Kenny needs help.</li>
+								<li>Kenny: Hi</li>
+								<li>John: Hello</li>
+							</ul>
+
+							<form form="form" id="send-form">
+								<input type="text" class="form-control" id="send-message" placeholder="Text input">
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- bootstrap, will load dynamically with server. change later-->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script src="/bootstrap/js/bootstrap.min.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<script src="/javascript/chat_client_ui.js"></script>
+	</body>
+</html>
